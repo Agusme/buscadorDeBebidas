@@ -16,5 +16,7 @@ const url=`https://www.thecocktaildb.com/api/json/v1/1/filter.php?c=${filters.ca
 
 const {data}= await axios(url)
 const result = DrinksAPIResponse.safeParse(data)
-console.log(result)
+if(result.success){
+  return result.data
+}
 }
